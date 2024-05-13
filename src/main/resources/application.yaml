@@ -1,0 +1,10 @@
+spring:
+  application:
+    name:
+      spring_hw_6_2_RickAndMorti
+
+  api:
+    character:
+       url:
+        "https://rickandmortyapi.com/api/character"
+

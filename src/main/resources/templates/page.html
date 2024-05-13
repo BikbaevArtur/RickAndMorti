@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rick and Morty Character</title>
+</head>
+<body>
+<h1>Character Information</h1>
+    <div th:each="result : ${characters.getResults()}">
+        <p>ID: <span th:text="${result.id}"></span></p>
+        <p>Name: <span th:text="${result.name}"></span></p>
+        <p>Status: <span th:text="${result.status}"></span></p>
+        <p>Species: <span th:text="${result.species}"></span></p>
+        <p>Type: <span th:text="${result.type}"></span></p>
+        <p>Gender: <span th:text="${result.gender}"></span></p>
+        <p><img th:src="${result.image}" alt="Character Image"/></p>
+        <p>URL: <a th:href="${result.url}" th:text="${result.url}"></a></p>
+        <p>Created: <span th:text="${result.created}"></span></p>
+    </div>
+<div th:if="${result == null}">
+    <p>No character information available.</p>
+</div>
+
+<a href="/page/prev">
+    <button>Назад</button>
+</a>
+
+<a href="/page/next">
+    <button>Вперед</button>
+</a>
+<div >
+    <p>Страница <span th:text="${pageNum}"></span><span>...</span><span th:text="${pageEnd}"></span></p>
+</div>
+
+
+</body>
+</html>
